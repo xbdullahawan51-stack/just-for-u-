@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Sister</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: #222;
+      color: white;
+    }
+    .slideshow {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+    .slide {
+      display: none;
+      width: 100%;
+      height: 100%;
+      padding: 40px;
+      box-sizing: border-box;
+      text-align: center;
+      line-height: 1.6em;
+    }
+    .slide h1 {
+      margin-bottom: 20px;
+    }
+    .slide:nth-child(1) { background: linear-gradient(135deg, #ff7eb3, #ff758c); }
+    .slide:nth-child(2) { background: linear-gradient(135deg, #6a11cb, #2575fc); }
+    .slide:nth-child(3) { background: linear-gradient(135deg, #11998e, #38ef7d); }
+    .slide:nth-child(4) { background: linear-gradient(135deg, #f7971e, #ffd200); }
+    .slide:nth-child(5) { background: linear-gradient(135deg, #fc5c7d, #6a82fb); }
+
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      text-align: center;
+    }
+    .controls button {
+      font-size: 18px;
+      padding: 10px 20px;
+      margin: 0 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: white;
+      color: #333;
+      font-weight: bold;
+    }
+    .controls button:hover {
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow">
+    <div class="slide" style="display:block;">
+      <h1>🎉 Happy Birthday, Sis! 🎉</h1>
+      <p>Dear sister, today is a day that shines brighter than the rest because it celebrates you 🌟. You are not only my sister but also my best friend, my partner in laughter, and the one who makes life feel lighter even in its heaviest moments. Your smile has the power to heal, your words bring comfort, and your presence fills every space with joy 💕. I cannot imagine my journey without you walking beside me, holding my hand through storms and dancing with me in sunshine. On your birthday, I want you to know that you are cherished beyond words, loved beyond measure, and appreciated more than I can ever express. May this day remind you of how special you are, not just to me but to everyone whose life you touch. 🎂✨</p>
+    </div>
+    <div class="slide">
+      <h1>💖 Thank You 💖</h1>
+      <p>Thank you, sis, for being my constant source of strength 🙏. You’ve stood by me when I was weak, lifted me when I fell, and celebrated me when I succeeded. Your patience has taught me kindness, your wisdom has guided me through confusion, and your love has reminded me that I am never alone 🌹. You are the one who listens without judgment, supports without hesitation, and loves without condition. I am endlessly grateful for the countless sacrifices you’ve made, the encouragement you’ve given, and the care you’ve shown. You are my safe place, my anchor, and my cheerleader, and I will always treasure the way you’ve shaped my life with your presence. Thank you for being you — the most amazing sister anyone could ask for 💕✨.</p>
+    </div>
+    <div class="slide">
+      <h1>🌟 Our Memories 🌟</h1>
+      <p>When I look back at the memories we’ve created together, my heart fills with warmth 🍀. From silly jokes that made us laugh until our stomachs hurt 😂, to quiet talks that gave me strength when I needed it most, every moment with you is a treasure. I remember the times we celebrated small victories, the times we comforted each other in sadness, and the times we simply enjoyed being together. Each memory is a thread in the fabric of our bond, weaving a story of love, friendship, and unbreakable connection 💖. These moments remind me that life is richer with you in it, and I look forward to creating countless more memories — ones filled with laughter, joy, and the kind of love only siblings can share 🌈✨.</p>
+    </div>
+    <div class="slide">
+      <h1>🙏 I’m Sorry 🙏</h1>
+      <p>I know I haven’t always been perfect, and sometimes my silly mistakes may have hurt you 😔. For those times, I want to sincerely apologize. Please know that I never meant to cause you pain, and I regret any moment that made you feel less valued. You are far too important to me, and I promise to keep learning, growing, and being more mindful. Thank you for always forgiving me, for reminding me that love and family are stronger than any mistake, and for showing me patience when I didn’t deserve it 💕. Your understanding has taught me humility, your forgiveness has taught me grace, and your love has taught me resilience. I will always strive to be better for you, because you deserve nothing less than the best 🌹✨.</p>
+    </div>
+    <div class="slide">
+      <h1>🎂 Cheers to You 🎂</h1>
+      <p>As you step into another year of your life, I wish you endless happiness, success, and peace 🌈. May your days be filled with laughter, your nights with comfort, and your heart with love. You deserve every good thing this world has to offer, and I hope this year brings you closer to your dreams 🌟. I’m proud to call you my sister, and I’ll always be here to celebrate your victories and support you through challenges. Happy Birthday once again 🎉 — let’s make more beautiful memories together and keep strengthening the bond we share 💖. You are my inspiration, my joy, and my forever friend. May this birthday be the beginning of a year filled with blessings, surprises, and endless love. You are truly one of the greatest gifts in my life, and I will always celebrate you with all my heart 💕✨.</p>
+    </div>
+
+    <div class="controls">
+      <button onclick="prevSlide()">⬅ Previous</button>
+      <button onclick="nextSlide()" id="nextBtn">Next ➡</button>
+    </div>
+  </div>
+
+  <script>
+    let slides = document.querySelectorAll('.slide');
+    let current = 0;
+
+    function showSlide(index) {
+      slides[current].style.display = "none";
+      current = (index + slides.length) % slides.length;
+      slides[current].style.display = "block";
+
+      // Hide "Next" button on last slide
+      if (current === slides.length - 1) {
+        document.getElementById("nextBtn").style.display = "none";
+      } else {
+        document.getElementById("nextBtn").style.display = "inline-block";
+      }
+    }
+
+    function nextSlide() {
+      showSlide(current + 1);
+    }
+
+    function prevSlide() {
+      showSlide(current - 1);
+    }
+  </script>
+</body>
+</html>
+
+
